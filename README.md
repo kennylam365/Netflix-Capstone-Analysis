@@ -68,7 +68,7 @@ Most attractive features of streaming services
 
 Top reasons to cancel subscriptions
 
-![cancel subscriptions](assets/cancel_subscriptions.png)
+![cancel subscriptions](assets/cancel_subsciptions.png)
 
 ## Assumptions and findings
 
