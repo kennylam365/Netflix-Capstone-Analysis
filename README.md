@@ -52,7 +52,7 @@ Stock price over the last 2 years
 
 Income vs stock price.
 
-![income vs stock price](assets/income_vs_stock.png)
+![income vs stock price](assets/nflx_income_vs_stock.png)
 
 Netflix candle stick graph.
 
