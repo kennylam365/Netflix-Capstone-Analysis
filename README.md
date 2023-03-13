@@ -1,10 +1,3 @@
-# Netflix-Capstone-Analysis
-This is my capstone project for Vertical Institute Data Analytics course, all required data are in the pdf file, and all visualizations are done using tableau and can be accessed using this link: https://public.tableau.com/views/Capstone_16651429209540/NFLXstock?:language=en-US&:display_count=n&:origin=viz_share_link
-
-Please start from the Netflix Capstone.pdf before heading to the tableau workbook to get a better understanding of the data viz
-
-Thanks for reading
-
 ![banner](assets/banner.png)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/kennylam365/Google-DA-Cyclistic-Capstone)
@@ -28,16 +21,7 @@ Badge [source](https://shields.io/)
   - [Quick glance at the results](#quick-glance-at-the-results)
   - [Assumptions and findings](#assumptions-and-findings)
   - [Lessons learned and recommendation](#lessons-learned-and-recommendation)
-  - [Limitation and what can be improved](#limitation-and-what-can-be-improved)
-  - [Run Locally](#run-locally)
-  - [Explore the notebook](#explore-the-notebook)
-  - [Deployment on streamlit](#deployment-on-streamlit)
-  - [Repository structure](#repository-structure)
-  - [Contribution](#contribution)
-  - [Blog post](#blog-post)
-  - [Project featuring](#project-featuring)
-  - [License](#license)
-
+  - [Explore the visualization](#explore-the-visualization)
 
 
 
@@ -79,6 +63,14 @@ Subscriber Count
 
 ![subscriber count](assets/subscriber_count.png)
 
+Most attractive features of streaming services
+
+![attractive features](assets/desired_shows.png)
+
+Top reasons to cancel subscriptions
+
+![cancel subscriptions](assets/cancel_subscriptions.png)
+
 ## Assumptions and findings
 
 - **Though there is an upward trend over the past 5 years, the data from the past 2 years (2020 onwards) shows a downwards trend instead**
@@ -88,139 +80,23 @@ Subscriber Count
 
   - Netflix historical price for the past 2 years (2020 onwards) has been facing a downwards trend. The downward trend is mostly caused by 2 major crashes in 2022, on 21st January and 20 April due to Netflix announcing their first subscriber loss in history and their changes in their account holder policy respectively. This can be supported by the income vs stock price graph; as Netflix announced its much lower earnings in 2021 Q4, we see a huge drop in Q1 2022, which dropped further as Netflix made an announcement that they plan to charge primary account holders an extra fee for every “sub account,” or password sharer, to make up for lost revenue on 20th April.
   - The candle stick graph also showed much more red than blue from 2022 onwards, likely due to the reasons above, we can see the 2 major crashes on 20th Jan ($508 to 400) and 20th April ($333 to $245) within a day. While there are more blue boxes at the second half of the year, the price point is way below the trend line and reversal of the downtrend seems to be quite unlikely.
-  - 
+  - While Netflix remains as the biggest streaming service, Amazon Prime and Disney+ has nearly caught up in the subscriber count. There are some possible reasons for that; in an survey hosted by [Variety intelligence platform](https://read-vip.variety.com/html5/reader/production/default.aspx?pubname=&edid=2e949e33-9379-4a0d-95cf-ccf7609337cf), we can see that the top reasons for cancelling video streaming subscription services are price increase and content being removed, and the most attractive feature of a streaming service is having the desired shows; to make up for their subscriber and income loss in January 2022, Netflix has increased their subscription rates and also implemented an extra fee for each sub-account. Not to mention Netflix lack of IPs compared to its direct competitors along side the fact that their rights to stream many shows has also ended as the contract expires. e.g. Amazon Prime - Lord of the rings Disney+ - Marvel,  Starwars.
 
-    ***Note***: There is always a trade-off between precision and recall. Choosing the right metrics depends on the problem you are solving.
+    ***Note***: Correlation does not mean there is a causal effect, further analysis required.
 
-    ***Conclusion***: Since the time I worked on this project (beginning 2022), we were in the longest bull market (excluding March 2020 flash crash) ever recorded; we will use recall as our metric.
+    ***Conclusion***: Netflix may not be a good investment choice based on all the points above.
 
 
  **Lessons learned and recommendation**
 
-- Based on this project's analysis, income, family member headcount, and employment length are the three most predictive features in determining whether an applicant will be approved for a credit card. Other features like age and working employment status are also helpful. The least useful features are the type of dwelling and car ownership.
-- The recommendation would be to focus more on the most predictive features when looking at the applicant profile and pay less attention to the least predictive features.
-
-## Limitation and what can be improved
-
-- Combine this model with with a regression model to predict how much of a credit limit an applicant will be approved for.
-- Hyperparameter tuning with grid search or random search.
-- Better interpretation of the chi-square test
-- Retrain the model without the least predictive features
+- Netflix poor decisions to increase its pricing while not having the unique selling points its competitors has caused both its revenue, subscribers and stock price to crash. Perhaps their confidence in making these decisions stems from the fact that Netflix used to be a monopoly for all streaming services years ago. While Disney and Amazon on the other hand, has been steadily growing and have their own large and unique IPs.
+- The recommendation would be that instead of Netflix, perhaps the investment firm should look at other tech companies or streaming services, as  there are too much negative news revolving around Netflix, and now that their streaming services is not a monopoly anymore, there are other choices to consider instead.
 
 
+## Explore the Visualization
 
-## Run Locally
-Initialize git
+To explore the visualization and interactive dashboard [here](https://public.tableau.com/views/NetflixCapstone_16787118044960/NFLXstock?:language=en-US&:display_count=n&:origin=viz_share_link)
 
-```bash
-git init
-```
+Please start from the Netflix Capstone.pdf before heading to the tableau workbook to get a better understanding of the data viz
 
-
-Clone the project
-
-```bash
-git clone https://github.com/semasuka/Credit-card-approval-prediction-classification.git
-```
-
-enter the project directory
-
-```bash
-cd Credit-card-approval-prediction-classification
-```
-
-Create a conda virtual environment and install all the packages from the environment.yml (recommended)
-
-```bash
-conda env create --prefix <env_name> --file assets/environment.yml
-```
-
-Activate the conda environment
-
-```bash
-conda activate <env_name>
-```
-
-List all the packages installed
-
-```bash
-conda list
-```
-
-Start the streamlit server locally
-
-```bash
-streamlit run cc_approval_pred.py
-```
-If you are having issue with streamlit, please follow [this tutorial on how to set up streamlit](https://docs.streamlit.io/library/get-started/installation)
-
-## Explore the notebook
-
-To explore the notebook file [here](https://nbviewer.org/github/semasuka/Credit-card-approval-prediction-classification/blob/main/Credit_card_approval_prediction.ipynb)
-
-## Deployment on streamlit
-
-To deploy this project on streamlit share, follow these steps:
-
-- first, make sure you upload your files on Github, including a requirements.txt file
-- go to [streamlit share](https://share.streamlit.io/)
-- login with Github, Google, etc.
-- click on new app button
-- select the Github repo name, branch, python file with the streamlit codes
-- click advanced settings, select python version 3.9 and add the secret keys if your model is stored on AWS or GCP bucket
-- then save and deploy!
-
-## App deployed on Streamlit
-
-![Streamlit GIF](assets/gif_streamlit.gif)
-
-Video to gif [tool](https://ezgif.com/)
-## Repository structure
-
-
-```
-
-├── assets
-│   ├── confusion_matrix.png                      <- confusion matrix image used in the README.
-│   ├── gif_streamlit.gif                         <- gif file used in the README.
-│   ├── heatmap.png                               <- heatmap image used in the README.
-│   ├── Credit_card_approval_banner.png           <- banner image used in the README.
-│   ├── environment.yml                           <- list of all the dependencies with their versions(for conda environment).
-│   ├── roc.png                                   <- ROC image used in the README.
-│
-├── datasets
-│   ├── application_record.csv                    <- the dataset with profile information (without the target variable).
-│   ├── credit_records.csv                        <- the dataset with account credit records (used to derive the target variable).
-│   ├── test.csv                                  <- the test data (with target variable).
-│   ├── train.csv                                 <- the train data (with target variable).
-│
-│
-├── pandas_profile_file
-│   ├── credit_pred_profile.html                  <- exported panda profile html file.
-│
-│
-├── .gitignore                                    <- used to ignore certain folder and files that won't be commit to git.
-│
-│
-├── Credit_card_approval_prediction.ipynb         <- main python notebook where all the analysis and modeling are done.
-│
-│
-├── LICENSE                                       <- license file.
-│
-│
-├── cc_approval_pred.py                           <- file with the model and streamlit component for rendering the interface.
-│
-│
-├── README.md                                     <- this readme file.
-│
-│
-├── requirements.txt                              <- list of all the dependencies with their versions(used for Streamlit).
-
-```
-## Contribution
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change or contribute.
-
-## Blog post
-
-The accompanying blog post for this project can be found [here](https://semasuka.github.io/blog/2022/10/12/credit-card-approval-prediction.html)
+Thanks for reading.
